@@ -1,4 +1,4 @@
-# Pseudo-Code Compiler
+# Pseudo-Code to C++ code Compiler
 
 This is a pseudo-code compiler for the CIE IGCSE and AS&A Levels Computer Science course. It is designed to be used with 0478/9718/9708.
 
