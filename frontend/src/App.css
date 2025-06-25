@@ -1,0 +1,142 @@
+/* App.css */
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.app-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  color: #27548A;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #27548A;
+}
+
+.panels {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.panel {
+  flex: 1;
+  min-width: 400px;
+  background-color: #e0e0e0;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(39, 84, 138, 0.4);
+}
+
+textarea {
+  width: 100%;
+  height: 300px;
+  padding: 1rem;
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid #27548A;
+  border-radius: 6px;
+  resize: none;
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+.output-box {
+  background-color: #ffffff;
+  padding: 1rem;
+  margin-top: 1rem;
+  min-height: 300px;
+  border-radius: 6px;
+  border: 1px solid #27548A;
+  text-align: left;
+  overflow-x: auto;
+}
+
+.glow-btn {
+  background-color: #27548A;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #27548A, 0 0 20px #27548A;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.glow-btn:hover {
+  background-color: #1f3e65;
+  box-shadow: 0 0 20px #27548A, 0 0 30px #27548A;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  background-color: #cccccc;
+  color: #27548A;
+  cursor: pointer;
+  font-weight: bold;
+  border: 2px solid transparent;
+}
+
+.tab.active {
+  border: 2px solid #27548A;
+  box-shadow: 0 0 10px #27548A;
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid #27548A;
+  text-align: center;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer h3 {
+  color: #27548A;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #27548A;
+}
+
+footer ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+footer li {
+  margin-bottom: 0.5rem;
+}
+
+footer p {
+  font-style: italic;
+  color: #666;
+}
