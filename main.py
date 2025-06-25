@@ -1,5 +1,6 @@
 import os
 import argparse
+import subprocess
 
 from classes.general_functions import eprint
 from classes.lexer import make_psuedocode_lexer
@@ -7,7 +8,6 @@ from classes.parser import make_pseudocode_parser
 from classes.compiler import PseudocodeCompiler
 
 # CIE Pseudocode compiler
-
 
 lexer = make_psuedocode_lexer()
 parser = make_pseudocode_parser()
@@ -20,6 +20,7 @@ arg_parser.add_argument("-o", "--output", help="The output file")
 arg_parser.add_argument("-c", "--cfile", help="The C file to generate")
 arg_parser.add_argument("-r", "--run", help="Run the compiled file", action="store_true")
 arg_parser.add_argument("-d", "--debug", help="Debug output", action="store_true")
+arg_parser.add_argument("--input", help="Provide input to compiled code")  # ✅ NEW
 args = arg_parser.parse_args()
 
 # Read the file
@@ -76,12 +77,26 @@ if not res:
     eprint("========")
     exit(3)
 
-# Run the compiled file if needed
+# ✅ Run the compiled file if needed
 if args.run:
     print("==== OUTPUT ====")
-    to_replace = "\\"
-    if os.name == 'posix':
-        to_replace = "/"
-
     ext = ".exe" if os.name == 'nt' else ""
-    os.system(f'{compiler.output_file.replace("/", to_replace)}{ext}')
+    binary_path = f'{compiler.output_file}{ext}'
+
+    try:
+        # Allow optional simulated user input
+        user_input = (args.input + "\n") if args.input else ""
+
+        result = subprocess.run(
+            [binary_path],
+            input=user_input,
+            capture_output=True,
+            text=True,
+            timeout=5
+        )
+        print(result.stdout.strip())
+        if result.stderr:
+            eprint("STDERR:")
+            eprint(result.stderr.strip())
+    except Exception as e:
+        eprint(f"Execution failed: {str(e)}")

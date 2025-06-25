@@ -103,7 +103,8 @@ def make_psuedocode_lexer():
     t_GREATER_THAN = r'>'
     t_LESS_THAN = r'<'
 
-    t_ASSIGNMENT = r'<-'
+
+    t_ASSIGNMENT = r'(←|<-)'
     t_COLON = r'\:'
     t_PLUS = r'\+'
     t_MINUS = r'\-'
@@ -151,7 +152,11 @@ def make_psuedocode_lexer():
         t.lexer.lineno += len(t.value)
 
     def t_error(t):
-        print(f"Illegal character {t.value[0]!r} at line {t.lineno} column {t.lexpos}")
+        try:
+            print(f"Illegal character {t.value[0]!r} at line {t.lineno} column {t.lexpos}")
+        except UnicodeEncodeError:
+            print("Illegal character at line", t.lineno, "column", t.lexpos)
+
         t.lexer.skip(1)
 
     def t_COMMENT(t):

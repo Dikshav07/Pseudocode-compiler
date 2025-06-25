@@ -1,2 +1,9 @@
 *.c
 .idea/
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+
+# Windows executables
+*.exe
