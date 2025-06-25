@@ -63,6 +63,24 @@ options:
   -d, --debug           Debug output
 ```
 
+## Run This Project
+This project also includes a Flask backend and a React frontend to provide a user interface for writing and compiling pseudocode.
+Step 1: Clone the Repository
+```bash
+git clone https://github.com/Dikshav07/Pseudocode-compiler.git
+cd Pseudocode-compiler
+```
+Step 2: Run the Python Backend (Flask)
+Make sure Python 3 is installed, then:
+```bash
+python app.py
+```
+Step 3: Run the Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
 
 
