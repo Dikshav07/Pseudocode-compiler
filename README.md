@@ -81,7 +81,7 @@ cd frontend
 npm install
 npm run dev
 ```
-##OUTPUT 
+## OUTPUT 
 ![Image](https://github.com/user-attachments/assets/9f0cb289-83a2-4db5-8e7e-dacfd9374576)
 <br>
 ![Image](https://github.com/user-attachments/assets/1b81ba13-778c-477e-bbf1-8fda02c06c4c)
