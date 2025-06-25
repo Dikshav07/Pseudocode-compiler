@@ -64,7 +64,7 @@ options:
 ```
 
 ## Run This Project
-This project also includes a Flask backend and a React frontend to provide a user interface for writing and compiling pseudocode.
+This project also includes a Flask backend and a React frontend to provide a user interface for writing and compiling pseudocode.<br>
 Step 1: Clone the Repository
 ```bash
 git clone https://github.com/Dikshav07/Pseudocode-compiler.git
